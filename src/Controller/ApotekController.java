@@ -30,6 +30,12 @@ public class ApotekController {
         frame.getShowTable().setModel(mtb);
     }
 
+    public void cariTable(String cari) {
+        lb = implement.getAllCari(cari);
+        ModelTableApotek mtb = new ModelTableApotek(lb);
+        frame.getShowTable().setModel(mtb);
+    }
+
     public void insert(){
         DataApotek db = new DataApotek();
         db.setId(frame.getTFID().getText());
@@ -58,6 +64,11 @@ public class ApotekController {
 
     public void clear(){
         implement.clear();
+    }
+
+    public void cari(){
+        String nama = frame.getTFNama().getText();
+        implement.getAllCari(nama);
     }
     
 }

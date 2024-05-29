@@ -18,4 +18,5 @@ public interface ApotekImplement {
     public void delete(String id);
     public List<DataApotek> getAll();
     public void clear();
+    public List<DataApotek> getAllCari(String nama);
 }

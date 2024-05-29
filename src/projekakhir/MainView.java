@@ -61,6 +61,9 @@ public class MainView extends javax.swing.JFrame {
         TFHarga = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         clr = new javax.swing.JButton();
+        TFCari = new javax.swing.JTextField();
+        jButtonCari = new javax.swing.JButton();
+        jButtonDataAwal = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -257,51 +260,92 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
+        TFCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFCariActionPerformed(evt);
+            }
+        });
+
+        jButtonCari.setBackground(new java.awt.Color(64, 89, 143));
+        jButtonCari.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jButtonCari.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonCari.setText("Cari");
+        jButtonCari.setToolTipText("");
+        jButtonCari.setBorderPainted(false);
+        jButtonCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCariActionPerformed(evt);
+            }
+        });
+
+        jButtonDataAwal.setBackground(new java.awt.Color(64, 89, 143));
+        jButtonDataAwal.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jButtonDataAwal.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonDataAwal.setText("Data Awal");
+        jButtonDataAwal.setToolTipText("");
+        jButtonDataAwal.setBorderPainted(false);
+        jButtonDataAwal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDataAwalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelUtamaLayout = new javax.swing.GroupLayout(jPanelUtama);
         jPanelUtama.setLayout(jPanelUtamaLayout);
         jPanelUtamaLayout.setHorizontalGroup(
             jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelUtamaLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanelUtamaLayout.createSequentialGroup()
-                                    .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jButtonTambah, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButtonHapus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGap(29, 29, 29)
-                                    .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jButtonUbah, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(TFID, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TFNama, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(TFStock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(TFHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TFKadaluarsa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelUtamaLayout.createSequentialGroup()
-                        .addComponent(jButtonLogout)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(clr)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelUtamaLayout.createSequentialGroup()
-                .addContainerGap(241, Short.MAX_VALUE)
-                .addComponent(jLabelJudul)
-                .addGap(214, 214, 214))
+                        .addComponent(TFCari, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonCari, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonDataAwal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabelJudul)
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanelUtamaLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanelUtamaLayout.createSequentialGroup()
+                                            .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jButtonTambah, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jButtonHapus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGap(29, 29, 29)
+                                            .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jButtonUbah, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(TFID, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TFNama, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(TFStock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(TFHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TFKadaluarsa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelUtamaLayout.createSequentialGroup()
+                                .addComponent(jButtonLogout)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clr)))
+                        .addContainerGap())))
         );
         jPanelUtamaLayout.setVerticalGroup(
             jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelUtamaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelJudul, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelJudul, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TFCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCari)
+                    .addComponent(jButtonDataAwal))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelUtamaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelUtamaLayout.createSequentialGroup()
@@ -405,23 +449,6 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TFIDActionPerformed
 
-    private void jButtonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTambahActionPerformed
-        if (TFID.getText().equals("") || TFNama.getText().equals("") || TFStock.getText().equals("") || TFHarga.getText().equals("") || TFKadaluarsa.getText().equals("")) {
-            ErrorView cv = new ErrorView("Data tidak boleh kosong");
-            cv.setVisible(true);
-        } else if (!TFStock.getText().matches("[0-9]+") || !TFHarga.getText().matches("[0-9]+")) {
-            ErrorView cv = new ErrorView("Stock dan Harga harus angka");
-            cv.setVisible(true);
-        } else if (TFStock.getText().length() > 5 || TFHarga.getText().length() > 10) {
-            ErrorView cv = new ErrorView("Stock maksimal 5 digit, Harga maksimal 10 digit");
-            cv.setVisible(true);
-        } else {
-            ac.insert();
-            ac.isiTable();
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonTambahActionPerformed
-
     private void showTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showTableMouseClicked
         int baris = showTable.getSelectedRow();
         TFID.setText(showTable.getValueAt(baris, 0).toString());
@@ -441,6 +468,39 @@ public class MainView extends javax.swing.JFrame {
         TFKadaluarsa.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_clrActionPerformed
+
+    private void jButtonTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTambahActionPerformed
+        if (TFID.getText().equals("") || TFNama.getText().equals("") || TFStock.getText().equals("") || TFHarga.getText().equals("") || TFKadaluarsa.getText().equals("")) {
+            ErrorView cv = new ErrorView("Data tidak boleh kosong");
+            cv.setVisible(true);
+        } else if (!TFStock.getText().matches("[0-9]+") || !TFHarga.getText().matches("[0-9]+")) {
+            ErrorView cv = new ErrorView("Stock dan Harga harus angka");
+            cv.setVisible(true);
+        } else if (TFStock.getText().length() > 5 || TFHarga.getText().length() > 10) {
+            ErrorView cv = new ErrorView("Stock maksimal 5 digit, Harga maksimal 10 digit");
+            cv.setVisible(true);
+        } else {
+            ac.insert();
+            ac.isiTable();
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonTambahActionPerformed
+
+    private void jButtonCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCariActionPerformed
+        ac.cari();
+        String cari = TFCari.getText();
+        ac.cariTable(cari);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCariActionPerformed
+
+    private void TFCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFCariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFCariActionPerformed
+
+    private void jButtonDataAwalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDataAwalActionPerformed
+        ac.isiTable();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonDataAwalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -478,13 +538,16 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TFCari;
     private javax.swing.JTextField TFHarga;
     private javax.swing.JTextField TFID;
     private javax.swing.JTextField TFKadaluarsa;
     private javax.swing.JTextField TFNama;
     private javax.swing.JTextField TFStock;
     private javax.swing.JButton clr;
+    private javax.swing.JButton jButtonCari;
     private javax.swing.JButton jButtonClear;
+    private javax.swing.JButton jButtonDataAwal;
     private javax.swing.JButton jButtonHapus;
     private javax.swing.JButton jButtonLogout;
     private javax.swing.JButton jButtonTambah;
@@ -551,5 +614,13 @@ public class MainView extends javax.swing.JFrame {
 
     public void setShowTable(JTable showTable) {
         this.showTable = showTable;
+    }
+
+    public JTextField getTFCari() {
+        return TFCari;
+    }
+
+    public void setTFCari(JTextField TFCari) {
+        this.TFCari = TFCari;
     }
 }

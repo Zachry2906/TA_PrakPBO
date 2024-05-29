@@ -23,6 +23,7 @@ public class DataAccess implements ApotekImplement{
     private final String delete = "DELETE FROM dataobat WHERE id=?";
     private final String select = "SELECT * FROM dataobat";
     private final String clear = "TRUNCATE dataobat";
+    private final String cari = "SELECT * FROM dataobat WHERE nama_obat=?";
     
     public DataAccess(){
         connection = Connector.getConnection();
@@ -129,5 +130,34 @@ public class DataAccess implements ApotekImplement{
                 Logger.getLogger(DataAccess.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+    }
+
+    @Override
+    public List<DataApotek> getAllCari(String nama) {
+        List <DataApotek> carii = new ArrayList<>();
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(cari);
+            statement.setString(1, nama);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()){
+                DataApotek db = new DataApotek();
+                db.setId(rs.getString("ID"));
+                db.setNama(rs.getString("nama_obat"));
+                db.setStock(rs.getInt("Stock"));
+                db.setHarga(rs.getDouble("Harga"));
+                db.setKadaluarsa(rs.getString("Kadaluarsa"));
+                carii.add(db);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DataAccess.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(DataAccess.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return carii;
     }
 }
